@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mukti Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body id="app">
+    <!-- bagian header -->
+    <header>
+      <h1 class="judul">Artikel</h1>
+      <p class="deskripsi">Selamat membaca artikel pilihan saya</p>
+    </header>
+    <!-- akhir bagian header template -->
+
+    <div class="wrap">
+      <!-- bagian menu		 -->
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="index.html">home</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- akhir bagian menu -->
+
+      <!-- bagian sidebar website -->
+      <aside class="sidebar">
+        <div class="widget">
+          <h2>{{nav.h}}</h2>
+          <p>Selamat datang di website tentang portofolio Mukti Candela</p>
+        </div>
+        <div class="widget">
+          <h2>{{nav.k}}</h2>
+          <p>
+            Hubungi Mukti Candela pada link
+            <a target="_blank" href="https://bit.ly/KontakMukti"
+              >bit.ly/KontakMukti</a
+            >
+          </p>
+        </div>
+      </aside>
+      <!-- akhir bagian sidebar website -->
+
+      <!-- bagian konten Blog -->
+      <div class="blog">
+        <div v-html="baca" class="conteudo">
+
+        </div>
+
+        
+
+        
+      </div>
+      <!-- akhir bagian konten Blog -->
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

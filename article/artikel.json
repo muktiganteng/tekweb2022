@@ -1,0 +1,20 @@
+[
+  {
+    "judul": "Apa itu Kopi?",
+    "img": "https://coffeeland.co.id/wp-content/uploads/2017/11/b.png",
+    "desc": "Kopi sudah menjadi kebutuhan hidup masyarakat. Tak hanya orang tua, saat ini banyak anak-anak muda yang menyukainya.",
+    "artikel": "artikel1.md"
+  },
+  {
+    "judul": "7 Manfaat Kafein untuk Kesehatan",
+    "img": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1615953589/attached_image/kafein-bisa-menjadi-sahabat-sehat-0-alodokter.jpg",
+    "desc": "Manfaat kafein yang mungkin sudah sering Anda dengar adalah untuk mengusir kantuk. Padahal, kafein juga memiliki banyak manfaat lainnya bagi kesehatan.",
+    "artikel":"artikel2.md"
+},
+  {
+    "judul": "20 Kata-kata Tentang Kopi, Bisa Jadi Inspirasimu",
+    "img": "https://cdnwpseller.gramedia.net/wp-content/uploads/2021/12/08161107/kata-kata-tentang-kopi.jpeg",
+    "desc": "Kopi tidak hanya menjadi sebuah minuman yang digemari oleh banyak masyarakat. Akan tetapi, kopi juga dapat dijadikan sebuah perumpamaan.",
+    "artikel":"artikel3.md"
+  }
+]

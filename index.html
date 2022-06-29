@@ -1,78 +1,118 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Mukti Portofolio</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	
-	<!-- bagian header -->
-	<header>
-		<h1 class="judul">Mukti Portofolio</h1>
-		<p class="deskripsi">Website yang berisi tentang portofolio Mukti Candela</p>
-	</header>
-	<!-- akhir bagian header template -->
-	
-	<div class="wrap">
-		<!-- bagian menu		 -->
-		<nav class="menu">
-			<ul>
-				<li>
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">About Me</a>
-				</li>
-				<li>
-					<a href="#">My Project</a>
-				</li>
-			</ul>
-		</nav>
-		<!-- akhir bagian menu -->
- 
-		<!-- bagian sidebar website -->
-		<aside class="sidebar">
-			<div class="widget">
-				<h2>Home</h2>
-				<p>Selamat datang di website tentang portofolio Mukti Candela</p>
-			</div>
-			<div class="widget">
-				<h2>Kontak</h2>
-				<p>Hubungi Mukti Candela pada link <a target="_blank" href="https://bit.ly/KontakMukti">bit.ly/KontakMukti</a></p>
-			</div>
-		</aside>
-		<!-- akhir bagian sidebar website -->
- 
-		<!-- bagian konten Blog -->
-		<div class="blog">
-			<div class="conteudo">
-				<div class="post-info">
-					Di Posting Oleh <b>Mukti Candela</b>
-				</div>
-				<img src="images/IMG_6521_(1).jpg">
-				<h1> About Me </h1>
-				<hr>
-				<p>
-					Nama Saya Mukti Candela asal dari Riau, Pekerjaan saya saat ini menjadi Mahasiswa di Universitas Ahmad Dahlan Yogyakarta, Program Studi Sistem Informasi Angkatan 2020.
-				</p>				
-				<a href="#" class="continue-lendo">Selengkapnya →</a>
-			</div>
-			<div class="conteudo">
-				<div class="post-info">
-					Di Posting Oleh <b>Mukti Candela</b>
-				</div>
-				<img src="images/WhatsApp Image 2022-03-31 at 05.47.56.jpeg">
-				<h1> My Project</h1>
-				<hr>
-				<p>
-					Kopi, bukan untuk bergaya atau instastory, tetapi kebutuhan yang menimbulkan inspirasi.
-					#KangSeduh 
-				</p>				
-				<a href="#" class="continue-lendo">Selengkapnya →</a>
-			</div>
-		</div>
-		<!-- akhir bagian konten Blog -->
-	</div>
- 
-</body>
+  <head>
+    <title>Mukti Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body id="app">
+    <!-- bagian header -->
+    <header>
+      <h1 class="judul">{{header.judul}}</h1>
+      <p class="deskripsi">{{header.desc}}</p>
+    </header>
+    <!-- akhir bagian header template -->
+
+    <div class="wrap">
+      <!-- bagian menu		 -->
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#about">{{nav.a}}</a>
+          </li>
+          <li>
+            <a href="#project">{{nav.m}}</a>
+          </li>
+          <li>
+            <a href="#table">{{nav.t}}</a>
+          </li>
+          <li>
+            <a href="#">{{nav.ar}}</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- akhir bagian menu -->
+
+      <!-- bagian sidebar website -->
+      <aside class="sidebar">
+        <div class="widget">
+          <h2>{{nav.h}}</h2>
+          <p>Selamat datang di website tentang portofolio Mukti Candela</p>
+        </div>
+        <div class="widget">
+          <h2>{{nav.k}}</h2>
+          <p>
+            Hubungi Mukti Candela pada link
+            <a target="_blank" href="https://bit.ly/KontakMukti"
+              >bit.ly/KontakMukti</a
+            >
+          </p>
+        </div>
+      </aside>
+      <!-- akhir bagian sidebar website -->
+
+      <!-- bagian konten Blog -->
+      <div class="blog">
+        <div id="about" class="conteudo">
+          <div class="post-info">Di buat Oleh <b>Mukti Candela</b></div>
+          <img class="me" src="images/IMG_6521_(1).jpg" />
+          <h1>{{about.judul}}</h1>
+          <hr />
+          <p>{{about.desc}}</p>
+        </div>
+        <div id="project" class="conteudo">
+          <img class="me" src="images/WhatsApp Image 2022-03-31 at 05.47.56.jpeg" />
+          <h1>{{project.judul}}</h1>
+          <hr />
+          <p>{{project.desc}}</p>
+          <a href="#" class="continue-lendo">Selengkapnya →</a>
+        </div>
+
+        <div class="conteudo">
+          <h1 id="table" class="tJudul">{{table.judul}}</h1>
+          <hr />
+          <table class="table">
+            <thead>
+              <tr>
+                <td v-for="judul in table.th" scope="col"><b>{{judul}}</b></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(data,n) in table.tr">
+                <td style="width: 20px" scope="row">{{n+1}}</td>
+                <td>{{data.k}}</td>
+                <td>{{data.s}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="conteudo">
+          <h1>Artikel</h1>
+          <hr />
+
+          <div class="artikel">
+            <div v-for="data in Artikel" class="bacaan">
+              <div class="col">
+                <img
+                  class="gambar"
+                  :src="data.img"
+                  alt="gambar artikel"
+                />
+                <h2>{{data.judul}}</h2>
+				<p>{{data.desc}}</p>
+				<a :href="'./read.html?baca='+data.artikel" type="button">Baca</a>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <!-- akhir bagian konten Blog -->
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>
