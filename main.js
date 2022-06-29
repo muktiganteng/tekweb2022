@@ -68,7 +68,7 @@ Vue.createApp({
         ambilDataMarkdown() {
             axios
                 .get(
-                    src = "./article/artikel.json"
+                    "https://raw.githubusercontent.com/muktiganteng/tekweb2022/main/article/artikel.json"
                 )
                 .then((res) => {
                     console.log(res.data);
@@ -85,7 +85,7 @@ Vue.createApp({
             var converter = new showdown.Converter();
             axios
                 .get(
-                    src="./article/"+baca
+                    "https://raw.githubusercontent.com/muktiganteng/tekweb2022/main/article/"+baca
                 )
                 .then((res) => {
                     var html = converter.makeHtml(res.data);
