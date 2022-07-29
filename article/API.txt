@@ -1,0 +1,220 @@
+DESAIN API POINT DATABASE
+
+User
+Menampilkan user data
+GET: /users
+response:
+[
+  {
+    "id": "",
+    "nama": "",
+    "tentang": "",
+    "kontak": ""
+  },
+    ...
+]
+
+
+Menampilkan user data tertentu
+GET: /users/[id]
+reponse:
+{
+    "id": "",
+    "nama": "",
+    "tentang": "",
+    "kontak": ""
+}
+
+
+Menambahkan user data baru
+POST: /user
+data:
+{
+    "nama": "",
+    "tentang": "",
+    "kontak": ""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Mengedit user data tertentu
+PUT: /user/[id]
+data:
+{
+    "nama": "",
+    "tentang": "",
+    "kontak": ""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Menghapus user data tertentu
+DELETE: /user/[id]
+response:
+true    // if success
+false   // if failure
+
+
+
+Artikel
+Menampilkan semua artikel data
+GET: /artikels
+response:
+[
+  {
+    "id": "",
+    "url_gambar": "",
+    "judul": "",
+    "des": "",
+    "artikel": ""
+  },
+  ...
+]
+
+
+Menampilkan artikel data tertentu
+GET: /artikels/[id]
+response:
+{
+    "id": "",
+    "url_gambar": "",
+    "judul": "",
+    "des": "",
+    "artikel": ""
+}
+
+
+Menambahkan artikel data 
+POST: /artikel
+data:
+{
+    "url_gambar": "",
+    "judul": "",
+    "des": "",
+    "artikel": ""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Mengupdate artikel data tertentu
+PUT: /artikel/[id]
+data:
+{
+    "id": "",
+    "url_gambar": "",
+    "judul": "",
+    "des": "",
+    "artikel": ""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Menghapus artikel data tertentu
+DELETE: /artikel/[id]
+response:
+true    // if success
+false   // if failure
+
+
+Keterampilan
+Menampilkan data Keterampilan
+GET: /keters
+response:
+[
+  {
+    "id":"",
+    "keterampilan":"",
+    "skill":""
+  },
+  ...
+]
+
+
+Menampilkan data Keterampilan tertentu
+GET: /keters/[id]
+response:
+{
+    "id":"",
+    "keterampilan":"",
+    "skill":""
+}
+
+
+Menambahkan data Keterampilan
+POST: /keter
+data:
+{
+    "keterampilan":"",
+    "skill":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Memperbarui Keterampilan tertentu
+PUT: /keter/[id]
+data:
+{
+    "keterampilan":"",
+    "skill":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+Menghapus Keterampilan tertentu
+DELETE: /keter/[id]
+response:
+true    // if success
+false   // if failure
+
+
+
+Desain Database
+berikut adalah desain dari API saya:
+
+mermaid
+classDiagram
+    class User{
+        # id: int
+        + nama: string
+        + tentang: string
+        + kontak: string
+        + getAllUser()
+        + getUserById()
+        + updateUser()
+        + createUser()
+        + deleteUser()
+    },
+    class Keter{
+        # id: int
+        + keterampilan: string
+        + skill: string
+        + getAllKeterampilan()
+        + getKeterampilanById()
+        + updateKeterampilan()
+        + createKeterampilan()
+        + deleteKeterampilan()
+    },
+    class Artikel{
+        # id: int
+        + url_gambar: string
+        + judul: string
+        + des: string
+        + artikel: string
+        + getAllArtikel()
+        + getArtikelById()
+        + updateArtikel()
+        + createArtikel()
+        + deleteArtikel()
+    }
